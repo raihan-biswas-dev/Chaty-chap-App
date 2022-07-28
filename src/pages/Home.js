@@ -3,6 +3,10 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { Alert, Grid } from '@mui/material';
 import { useNavigate } from 'react-router-dom'
 import LeftUserBar from '../components/LeftUserBar';
+import Search from '../components/Search';
+import GroupList from '../components/GroupList';
+import FriendRequest from '../components/FriendRequest';
+import Friends from '../components/Friends';
 
 
 export default function Home() {
@@ -34,10 +38,12 @@ export default function Home() {
                         <LeftUserBar active='home' />
                     </Grid>
                     <Grid item xs={4}>
-                        left middle
+                        <Search />
+                        <GroupList />
+                        <FriendRequest />
                     </Grid>
                     <Grid item xs={3}>
-                        friend
+                        <Friends />
                     </Grid>
                     <Grid item xs={3}>
                         user list

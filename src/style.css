@@ -180,3 +180,97 @@ ul li {
     height: 500px;
     background: red;
 }
+
+.search input {
+    width: 100%;
+    padding: 17px 91px;
+    box-sizing: border-box;
+    border: 0;
+    box-shadow: 0px 10px 18px -8px rgba(0, 0, 0, 0.36);
+    border-radius: 20px;
+}
+
+.search {
+    position: relative;
+    margin-top: 40px;
+}
+
+.search .searchIcon {
+    position: absolute;
+    top: 50%;
+    left: 23px;
+    transform: translateY(-50%);
+}
+
+.search .ThreeDotsVertical {
+    position: absolute;
+    right: 22px;
+    top: 19px;
+}
+
+.groupList {
+    width: 100%;
+    padding: 17px 91px;
+    box-sizing: border-box;
+    border: 0;
+    box-shadow: 0px 10px 18px -8px rgba(0, 0, 0, 0.36);
+    border-radius: 20px;
+    height: 318px;
+    overflow-y: scroll;
+    margin-top: 43px;
+}
+
+.friendList {
+    height: 771px;
+}
+.groupList .groupBox h2 {
+    font-family: "Poppins", sans-serif;
+    color: #000;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.groupList .groupBox h3 {
+    font-family: "Poppins", sans-serif;
+    color: #000;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.groupList .groupBox p {
+    font-family: "Poppins", sans-serif;
+    color: #4d4d4d;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.groupList .groupBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    margin-top: 25px;
+    padding-bottom: 13px;
+}
+
+.groupList .groupBox:last-child {
+    border: 0;
+}
+
+.groupList .groupBox .img img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.groupList .groupBox .button button {
+    padding: 8px 14px;
+    background: #5f35f5;
+    color: #fff;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+}
