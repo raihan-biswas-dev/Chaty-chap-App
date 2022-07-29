@@ -7,7 +7,7 @@ export default function Friends() {
                 <h2>Friends</h2>
                 <div className="groupBox">
                     <div className="img">
-                        <img src="assets/images/friend-1.png" alt="" />
+                        <img src="assets/images/req-1.png" alt="" />
                     </div>
                     <div className="name">
                         <h3>Friends Reunion</h3>
@@ -17,7 +17,7 @@ export default function Friends() {
                 </div>
                 <div className="groupBox">
                     <div className="img">
-                        <img src="assets/images/friend-2.png" alt="" />
+                        <img src="assets/images/req-2.png" alt="" />
                     </div>
                     <div className="name">
                         <h3>Friends Reunion</h3>
@@ -27,7 +27,7 @@ export default function Friends() {
                 </div>
                 <div className="groupBox">
                     <div className="img">
-                        <img src="assets/images/friend-3.png" alt="" />
+                        <img src="assets/images/req-3.png" alt="" />
                     </div>
                     <div className="name">
                         <h3>Friends Reunion</h3>
@@ -37,7 +37,7 @@ export default function Friends() {
                 </div>
                 <div className="groupBox">
                     <div className="img">
-                        <img src="assets/images/friend-3.png" alt="" />
+                        <img src="assets/images/req-4.png" alt="" />
                     </div>
                     <div className="name">
                         <h3>Friends Reunion</h3>
@@ -47,7 +47,7 @@ export default function Friends() {
                 </div>
                 <div className="groupBox">
                     <div className="img">
-                        <img src="assets/images/friend-3.png" alt="" />
+                        <img src="assets/images/req-5.png" alt="" />
                     </div>
                     <div className="name">
                         <h3>Friends Reunion</h3>
@@ -57,7 +57,7 @@ export default function Friends() {
                 </div>
                 <div className="groupBox">
                     <div className="img">
-                        <img src="assets/images/friend-3.png" alt="" />
+                        <img src="assets/images/req-6.png" alt="" />
                     </div>
                     <div className="name">
                         <h3>Friends Reunion</h3>
@@ -67,7 +67,7 @@ export default function Friends() {
                 </div>
                 <div className="groupBox">
                     <div className="img">
-                        <img src="assets/images/friend-3.png" alt="" />
+                        <img src="assets/images/req-7.png" alt="" />
                     </div>
                     <div className="name">
                         <h3>Friends Reunion</h3>

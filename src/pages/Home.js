@@ -7,6 +7,7 @@ import Search from '../components/Search';
 import GroupList from '../components/GroupList';
 import FriendRequest from '../components/FriendRequest';
 import Friends from '../components/Friends';
+import UserList from '../components/UserList';
 
 
 export default function Home() {
@@ -41,12 +42,13 @@ export default function Home() {
                         <Search />
                         <GroupList />
                         <FriendRequest />
+
                     </Grid>
                     <Grid item xs={3}>
                         <Friends />
                     </Grid>
                     <Grid item xs={3}>
-                        user list
+                        <UserList />
                     </Grid>
                 </Grid>
 

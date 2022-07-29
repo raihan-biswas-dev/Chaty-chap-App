@@ -1,75 +1,85 @@
 import React from 'react'
 
-export default function GroupList() {
+export default function UserList() {
     return (
-        <div className='groupList'>
-            <h2>Groups Request</h2>
+        <div className='groupList friendList'>
+            <h2>User List</h2>
             <div className="groupBox">
                 <div className="img">
-                    <img src="assets/images/group-1.png" alt="" />
+                    <img src="assets/images/req-1.png" alt="" />
                 </div>
                 <div className="name">
-                    <h2>Friends Reunion</h2>
+                    <h3>Friends Reunion</h3>
                     <p>Hi Guys, Wassup!</p>
                 </div>
                 <div className="button"><button>Accept</button></div>
             </div>
             <div className="groupBox">
                 <div className="img">
-                    <img src="assets/images/group-2.png" alt="" />
+                    <img src="assets/images/req-2.png" alt="" />
                 </div>
                 <div className="name">
-                    <h2>Friends Reunion</h2>
+                    <h3>Friends Reunion</h3>
                     <p>Hi Guys, Wassup!</p>
                 </div>
                 <div className="button"><button>Accept</button></div>
             </div>
             <div className="groupBox">
                 <div className="img">
-                    <img src="assets/images/group-3.png" alt="" />
+                    <img src="assets/images/req-3.png" alt="" />
                 </div>
                 <div className="name">
-                    <h2>Friends Reunion</h2>
+                    <h3>Friends Reunion</h3>
                     <p>Hi Guys, Wassup!</p>
                 </div>
                 <div className="button"><button>Accept</button></div>
             </div>
             <div className="groupBox">
                 <div className="img">
-                    <img src="assets/images/group-1.png" alt="" />
+                    <img src="assets/images/req-4.png" alt="" />
                 </div>
                 <div className="name">
-                    <h2>Friends Reunion</h2>
+                    <h3>Friends Reunion</h3>
                     <p>Hi Guys, Wassup!</p>
                 </div>
                 <div className="button"><button>Accept</button></div>
             </div>
             <div className="groupBox">
                 <div className="img">
-                    <img src="assets/images/group-1.png" alt="" />
+                    <img src="assets/images/req-5.png" alt="" />
                 </div>
                 <div className="name">
-                    <h2>Friends Reunion</h2>
+                    <h3>Friends Reunion</h3>
                     <p>Hi Guys, Wassup!</p>
                 </div>
                 <div className="button"><button>Accept</button></div>
             </div>
             <div className="groupBox">
                 <div className="img">
-                    <img src="assets/images/group-1.png" alt="" />
+                    <img src="assets/images/req-6.png" alt="" />
                 </div>
                 <div className="name">
-                    <h2>Friends Reunion</h2>
+                    <h3>Friends Reunion</h3>
                     <p>Hi Guys, Wassup!</p>
                 </div>
                 <div className="button"><button>Accept</button></div>
             </div>
             <div className="groupBox">
                 <div className="img">
-                    <img src="assets/images/group-1.png" alt="" />
+                    <img src="assets/images/req-7.png" alt="" />
                 </div>
                 <div className="name">
-                    <h2>Friends Reunion</h2>
+                    <h3>Friends Reunion</h3>
+                    <p>Hi Guys, Wassup!</p>
+                </div>
+                <div className="button"><button>Accept</button></div>
+            </div>
+            <div className="groupBox">
+                <div className="img">
+                    <img src="assets/images/friend-3.png" alt="" />
+                </div>
+                <div className="name">
+                    <h3>Friends Reunion</h3>
                     <p>Hi Guys, Wassup!</p>
                 </div>
                 <div className="button"><button>Accept</button></div>

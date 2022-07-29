@@ -215,15 +215,15 @@ ul li {
     border: 0;
     box-shadow: 0px 10px 18px -8px rgba(0, 0, 0, 0.36);
     border-radius: 20px;
-    height: 318px;
+    height: 384px;
     overflow-y: scroll;
     margin-top: 43px;
 }
 
 .friendList {
-    height: 771px;
+    height: 902px;
 }
-.groupList .groupBox h2 {
+.groupList  h2 {
     font-family: "Poppins", sans-serif;
     color: #000;
     font-size: 18px;
