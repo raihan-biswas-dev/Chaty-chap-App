@@ -2,10 +2,12 @@ import React, { useState } from 'react'
 import { Grid, TextField, Button, Collapse, Alert, IconButton } from '@mui/material'
 import { Link, useNavigate } from 'react-router-dom'
 import { getAuth, createUserWithEmailAndPassword, sendEmailVerification, updateProfile } from "firebase/auth";
+import { getDatabase, ref, set } from "firebase/database";
 import CloseIcon from '@mui/icons-material/Close';
 
 export default function Registrations() {
 
+  const db = getDatabase();
   const auth = getAuth();
   let navigate = useNavigate();
 
@@ -47,6 +49,7 @@ export default function Registrations() {
     } else {
       setMatchPassword('')
       createUserWithEmailAndPassword(auth, email, password).then((user) => {
+
         sendEmailVerification(auth.currentUser)
           .then(() => {
             console.log('Email verification sent!')
@@ -55,6 +58,13 @@ export default function Registrations() {
               displayName: name,
             }).then(() => {
               console.log('Profile updated')
+              set(ref(db, 'users/'+ auth.currentUser.uid), {
+                username: name,
+                email: email,
+              });
+
+
+
             }).catch((error) => {
               console.log(error)
             });

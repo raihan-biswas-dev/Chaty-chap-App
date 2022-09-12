@@ -1,89 +1,102 @@
-import React from 'react'
-
+import React, { useState, useEffect } from 'react'
+import { AiOutlineUserAdd } from 'react-icons/ai';
+import { BsCheck } from 'react-icons/bs';
+import { getDatabase, ref, onValue, set, push } from "firebase/database";
+import { getAuth } from "firebase/auth";
 export default function UserList() {
+
+    const [friendReq, setFriendReq] = useState([])
+    let friendReqArr = []
+    const [userList, setUserList] = useState()
+    const db = getDatabase();
+    const auth = getAuth();
+
+    useEffect(() => {
+        let userArr = []
+        const userRef = ref(db, 'users/');
+        onValue(userRef, (snapshot) => {
+
+
+            userArr = []
+            snapshot.forEach((item) => {
+                userArr.push(
+                    {
+                        username: item.val().username,
+                        email: item.val().email,
+                        id: item.key
+                    }
+                );
+            })
+            setUserList(userArr);
+        });
+    }, [])
+
+
+    useEffect(() => {
+        const friendReqRefRef = ref(db, 'friendRequest/');
+        onValue(friendReqRefRef, (snapshot) => {
+            const data = snapshot.val();
+
+            friendReqArr = []
+            snapshot.forEach((item) => {
+
+
+                console.log(auth.currentUser.uid);
+                friendReqArr.push(item.val().receiverId)
+
+
+            })
+            setFriendReq(friendReqArr);
+        });
+    }, [])
+
+
+    console.log(friendReq)
+
+
+
+
+
+
+
+
+    let handleFriendRequest = (userInfo) => {
+        set(push(ref(db, 'friendRequest/')), {
+            name: auth.currentUser.displayName,
+            receiverId: userInfo.id,
+            senderId: auth.currentUser.uid
+        });
+    }
+
+
     return (
         <div className='groupList friendList'>
             <h2>User List</h2>
-            <div className="groupBox">
-                <div className="img">
-                    <img src="assets/images/req-1.png" alt="" />
+
+            {userList && userList.map((item) => (
+
+                auth.currentUser.uid !== item.id &&
+
+                <div div className="groupBox" >
+                    <div className="img">
+                        <img src="assets/images/req-1.png" alt="" />
+                    </div>
+                    <div className="name">
+                        <h3>{item.username}</h3>
+                        <p>{item.id}</p>
+                    </div>
+                    {friendReq.includes(item.id) ?
+
+                        <div className="button"><button><BsCheck /></button></div>
+
+                        :
+
+                        <div className="button"><button onClick={() => handleFriendRequest(item)}><AiOutlineUserAdd /></button></div>
+                    }
                 </div>
-                <div className="name">
-                    <h3>Friends Reunion</h3>
-                    <p>Hi Guys, Wassup!</p>
-                </div>
-                <div className="button"><button>Accept</button></div>
-            </div>
-            <div className="groupBox">
-                <div className="img">
-                    <img src="assets/images/req-2.png" alt="" />
-                </div>
-                <div className="name">
-                    <h3>Friends Reunion</h3>
-                    <p>Hi Guys, Wassup!</p>
-                </div>
-                <div className="button"><button>Accept</button></div>
-            </div>
-            <div className="groupBox">
-                <div className="img">
-                    <img src="assets/images/req-3.png" alt="" />
-                </div>
-                <div className="name">
-                    <h3>Friends Reunion</h3>
-                    <p>Hi Guys, Wassup!</p>
-                </div>
-                <div className="button"><button>Accept</button></div>
-            </div>
-            <div className="groupBox">
-                <div className="img">
-                    <img src="assets/images/req-4.png" alt="" />
-                </div>
-                <div className="name">
-                    <h3>Friends Reunion</h3>
-                    <p>Hi Guys, Wassup!</p>
-                </div>
-                <div className="button"><button>Accept</button></div>
-            </div>
-            <div className="groupBox">
-                <div className="img">
-                    <img src="assets/images/req-5.png" alt="" />
-                </div>
-                <div className="name">
-                    <h3>Friends Reunion</h3>
-                    <p>Hi Guys, Wassup!</p>
-                </div>
-                <div className="button"><button>Accept</button></div>
-            </div>
-            <div className="groupBox">
-                <div className="img">
-                    <img src="assets/images/req-6.png" alt="" />
-                </div>
-                <div className="name">
-                    <h3>Friends Reunion</h3>
-                    <p>Hi Guys, Wassup!</p>
-                </div>
-                <div className="button"><button>Accept</button></div>
-            </div>
-            <div className="groupBox">
-                <div className="img">
-                    <img src="assets/images/req-7.png" alt="" />
-                </div>
-                <div className="name">
-                    <h3>Friends Reunion</h3>
-                    <p>Hi Guys, Wassup!</p>
-                </div>
-                <div className="button"><button>Accept</button></div>
-            </div>
-            <div className="groupBox">
-                <div className="img">
-                    <img src="assets/images/friend-3.png" alt="" />
-                </div>
-                <div className="name">
-                    <h3>Friends Reunion</h3>
-                    <p>Hi Guys, Wassup!</p>
-                </div>
-                <div className="button"><button>Accept</button></div>
-            </div>
+            ))
+            }
+
         </div>
     )
 }

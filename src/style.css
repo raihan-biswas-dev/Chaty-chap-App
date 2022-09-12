@@ -230,6 +230,12 @@ ul li {
     font-weight: 600;
 }
 
+.groupList .name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 .groupList .groupBox h3 {
     font-family: "Poppins", sans-serif;
     color: #000;
